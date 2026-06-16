@@ -1,141 +1,250 @@
 {
-    "Wilderness": {
-        "next": [
-            "EnterWilderness",
-            "CollectEXP",
-            "CollectMoney",
-            "CollectTrust",
-            "TrustDialogueNext",
-            "TrustDialogueInteraction",
-            "[JumpBack]Sub_StartUp"
-        ]
+  "Wilderness": {
+    "action": {
+      "type": "DoNothing"
     },
-    "EnterWilderness": {
-        "recognition": "TemplateMatch",
+    "next": [
+      "EnterWilderness",
+      "CollectEXP",
+      "CollectMoney",
+      "CollectTrust",
+      "TrustDialogueNext",
+      "TrustDialogueInteraction",
+      {
+        "name": "Wilderness.Sub_StartUp",
+        "jump_back": true
+      }
+    ]
+  },
+  "EnterWilderness": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
         "template": "Wilderness/EnterWilderness.png",
-        "roi": [
-            889,
-            348,
-            242,
-            132
-        ],
-        "action": "Click",
-        "next": [
-            "EnterWilderness",
-            "CollectEXP",
-            "CollectMoney",
-            "CollectTrust",
-            "TrustDialogueNext",
-            "TrustDialogueInteraction",
-            "[JumpBack]Sub_HomeLoading"
-        ]
+        "roi": [889, 348, 242, 132]
+      }
     },
-    "CollectEXP": {
-        "recognition": "TemplateMatch",
+    "action": {
+      "type": "Click",
+      "param": {
+        "target": true
+      }
+    },
+    "next": [
+      "EnterWilderness",
+      "CollectEXP",
+      "CollectMoney",
+      "CollectTrust",
+      "TrustDialogueNext",
+      "TrustDialogueInteraction",
+      {
+        "name": "Wilderness.Sub_HomeLoading",
+        "jump_back": true
+      }
+    ]
+  },
+  "CollectEXP": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
         "template": "Wilderness/CollectEXP.png",
-        "roi": [
-            455,
-            87,
-            139,
-            134
-        ],
-        "action": "Click",
-        "post_wait_freezes": 1,
-        "next": [
-            "CollectMoney",
-            "CollectTrust",
-            "TrustDialogueNext",
-            "TrustDialogueInteraction",
-            "[JumpBack]Sub_HomeButton",
-            "HomeFlag"
-        ]
+        "roi": [455, 87, 139, 134]
+      }
     },
-    "CollectMoney": {
-        "recognition": "TemplateMatch",
+    "action": {
+      "type": "Click",
+      "param": {
+        "target": true
+      }
+    },
+    "post_wait_freezes": 1,
+    "next": [
+      "CollectMoney",
+      "CollectTrust",
+      "TrustDialogueNext",
+      "TrustDialogueInteraction",
+      {
+        "name": "Wilderness.Sub_HomeButton",
+        "jump_back": true
+      },
+      "Wilderness.HomeFlag"
+    ]
+  },
+  "CollectMoney": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
         "template": "Wilderness/CollectMoney.png",
-        "roi": [
-            685,
-            34,
-            132,
-            134
-        ],
-        "action": "Click",
-        "post_wait_freezes": 1,
-        "next": [
-            "CollectTrust",
-            "TrustDialogueNext",
-            "TrustDialogueInteraction",
-            "[JumpBack]Sub_HomeButton",
-            "HomeFlag"
-        ]
+        "roi": [685, 34, 132, 134]
+      }
     },
-    "CollectTrust": {
-        "recognition": "TemplateMatch",
+    "action": {
+      "type": "Click",
+      "param": {
+        "target": true
+      }
+    },
+    "post_wait_freezes": 1,
+    "next": [
+      "CollectTrust",
+      "TrustDialogueNext",
+      "TrustDialogueInteraction",
+      {
+        "name": "Wilderness.Sub_HomeButton",
+        "jump_back": true
+      },
+      "Wilderness.HomeFlag"
+    ]
+  },
+  "CollectTrust": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
         "template": "Wilderness/CollectTrust.png",
-        "roi": [
-            0,
-            58,
-            188,
-            438
-        ],
-        "action": "Click",
-        "next": [
-            "TrustMax",
-            "CollectTrust",
-            "TrustDialogueNext",
-            "TrustDialogueInteraction",
-            "[JumpBack]Sub_HomeButton",
-            "HomeFlag"
-        ]
+        "roi": [0, 58, 188, 438]
+      }
     },
-    "TrustDialogueNext": {
-        "recognition": "TemplateMatch",
+    "action": {
+      "type": "Click",
+      "param": {
+        "target": true
+      }
+    },
+    "next": [
+      "TrustMax",
+      "CollectTrust",
+      "TrustDialogueNext",
+      "TrustDialogueInteraction",
+      {
+        "name": "Wilderness.Sub_HomeButton",
+        "jump_back": true
+      },
+      "Wilderness.HomeFlag"
+    ]
+  },
+  "TrustDialogueNext": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
         "template": "Wilderness/TrustDialogueNext.png",
-        "roi": [
-            1119,
-            631,
-            124,
-            89
-        ],
-        "action": "Click",
-        "next": [
-            "TrustDialogueNext",
-            "TrustDialogueInteraction",
-            "[JumpBack]Sub_HomeButton",
-            "HomeFlag"
-        ]
+        "roi": [1119, 631, 124, 89]
+      }
     },
-    "TrustDialogueInteraction": {
-        "recognition": "TemplateMatch",
+    "action": {
+      "type": "Click",
+      "param": {
+        "target": true
+      }
+    },
+    "next": [
+      "TrustDialogueNext",
+      "TrustDialogueInteraction",
+      {
+        "name": "Wilderness.Sub_HomeButton",
+        "jump_back": true
+      },
+      "Wilderness.HomeFlag"
+    ]
+  },
+  "TrustDialogueInteraction": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
         "template": "Wilderness/TrustDialogueInteraction.png",
-        "roi": [
-            1095,
-            42,
-            185,
-            593
-        ],
-        "action": "Click",
-        "next": [
-            "TrustDialogueNext",
-            "TrustDialogueInteraction",
-            "[JumpBack]Sub_HomeButton",
-            "HomeFlag"
-        ]
+        "roi": [1095, 42, 185, 593]
+      }
     },
-    "TrustMax": {
-        "recognition": "OCR",
-        "expected": [
-            "MAX"
-        ],
-        "roi": [
-            0,
-            24,
-            185,
-            638
-        ],
-        "next": [
-            "[JumpBack]Sub_HomeButton",
-            "HomeFlag"
-        ]
+    "action": {
+      "type": "Click",
+      "param": {
+        "target": true
+      }
+    },
+    "next": [
+      "TrustDialogueNext",
+      "TrustDialogueInteraction",
+      {
+        "name": "Wilderness.Sub_HomeButton",
+        "jump_back": true
+      },
+      "Wilderness.HomeFlag"
+    ]
+  },
+  "TrustMax": {
+    "recognition": {
+      "type": "OCR",
+      "param": {
+        "expected": ["MAX"],
+        "roi": [0, 24, 185, 638]
+      }
+    },
+    "action": {
+      "type": "DoNothing"
+    },
+    "next": [
+      {
+        "name": "Wilderness.Sub_HomeButton",
+        "jump_back": true
+      },
+      "Wilderness.HomeFlag"
+    ]
+  },
+  "Wilderness.Sub_StartUp": {
+    "action": {
+      "type": "DoNothing"
+    },
+    "next": [
+      "Wilderness.HomeFlag",
+      {
+        "name": "Wilderness.Sub_HomeButton",
+        "jump_back": true
+      },
+      {
+        "name": "Wilderness.Sub_HomeLoading",
+        "jump_back": true
+      }
+    ]
+  },
+  "Wilderness.Sub_HomeLoading": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "template": "StartUp/HomeLoading.png",
+        "roi": [459, 359, 364, 152]
+      }
+    },
+    "action": {
+      "type": "DoNothing"
     }
+  },
+  "Wilderness.Sub_HomeButton": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "template": [
+          "StartUp/HomeButton.png",
+          "StartUp/HomeButton_White.png"
+        ],
+        "roi": [70, 0, 144, 144]
+      }
+    },
+    "action": {
+      "type": "Click",
+      "param": {
+        "target": true
+      }
+    }
+  },
+  "Wilderness.HomeFlag": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "template": "StartUp/HomeFlag.png",
+        "roi": [1022, 419, 194, 166]
+      }
+    },
+    "action": {
+      "type": "DoNothing"
+    }
+  }
 }
