@@ -1,386 +1,257 @@
 {
-  "StartUp": {
-    "action": {
-      "type": "DoNothing"
+    "StartUp": {
+        "next": [
+            "HomeFlag",
+            "[JumpBack]Sub_HomeButton",
+            "[JumpBack]Sub_BackButton",
+            "[JumpBack]Sub_HomeLoading",
+            "[JumpBack]Sub_ObtainedAwards",
+            "[JumpBack]Sub_AccumulatedSignIn",
+            "[JumpBack]Sub_BirthdayReward",
+            "[JumpBack]Sub_Reward",
+            "[JumpBack]Sub_CloseDuringFestivalDipaRewardPage",
+            "StartGame",
+            "CloseAnnouncement",
+            "Download",
+            "GameLoading",
+            "BluePochLogo",
+            "Disclaimer",
+            "[JumpBack]Sub_Start1999"
+        ]
     },
-    "next": [
-      "HomeFlag",
-      {
-        "name": "Sub_HomeButton",
-        "jump_back": true
-      },
-      {
-        "name": "Sub_BackButton",
-        "jump_back": true
-      },
-      {
-        "name": "Sub_HomeLoading",
-        "jump_back": true
-      },
-      {
-        "name": "Sub_ObtainedAwards",
-        "jump_back": true
-      },
-      {
-        "name": "Sub_AccumulatedSignIn",
-        "jump_back": true
-      },
-      {
-        "name": "Sub_BirthdayReward",
-        "jump_back": true
-      },
-      {
-        "name": "Sub_Reward",
-        "jump_back": true
-      },
-      {
-        "name": "Sub_CloseDuringFestivalDipaRewardPage",
-        "jump_back": true
-      },
-      "StartGame",
-      "CloseAnnouncement",
-      "Download",
-      "GameLoading",
-      "BluePochLogo",
-      "Disclaimer",
-      {
-        "name": "Sub_Start1999",
-        "jump_back": true
-      }
-    ]
-  },
-  "Sub_StartUp": {
-    "action": {
-      "type": "DoNothing"
+    "Sub_StartUp": {
+        "next": [
+            "HomeFlag",
+            "[JumpBack]Sub_HomeButton",
+            "[JumpBack]Sub_BackButton",
+            "[JumpBack]Sub_HomeLoading",
+            "[JumpBack]Sub_ObtainedAwards",
+            "[JumpBack]Sub_AccumulatedSignIn",
+            "[JumpBack]Sub_BirthdayReward",
+            "[JumpBack]Sub_Reward",
+            "[JumpBack]Sub_CloseDuringFestivalDipaRewardPage",
+            "StartGame",
+            "CloseAnnouncement",
+            "Download",
+            "GameLoading",
+            "BluePochLogo",
+            "Disclaimer",
+            "Stop"
+        ]
     },
-    "next": [
-      "HomeFlag",
-      {
-        "name": "Sub_HomeButton",
-        "jump_back": true
-      },
-      {
-        "name": "Sub_BackButton",
-        "jump_back": true
-      },
-      {
-        "name": "Sub_HomeLoading",
-        "jump_back": true
-      },
-      {
-        "name": "Sub_ObtainedAwards",
-        "jump_back": true
-      },
-      {
-        "name": "Sub_AccumulatedSignIn",
-        "jump_back": true
-      },
-      {
-        "name": "Sub_BirthdayReward",
-        "jump_back": true
-      },
-      {
-        "name": "Sub_Reward",
-        "jump_back": true
-      },
-      {
-        "name": "Sub_CloseDuringFestivalDipaRewardPage",
-        "jump_back": true
-      },
-      "StartGame",
-      "CloseAnnouncement",
-      "Download",
-      "GameLoading",
-      "BluePochLogo",
-      "Disclaimer",
-      "Stop"
-    ]
-  },
-  "Sub_Start1999": {
-    "action": {
-      "type": "StartApp",
-      "param": {
-        "package": "set.in.code"
-      }
+    "Sub_Start1999": {
+        "action": "StartApp",
+        "package_doc": "set in code."
     },
-    "attach": {
-      "package_doc": "set in code."
-    }
-  },
-  "BluePochLogo": {
-    "recognition": {
-      "type": "TemplateMatch",
-      "param": {
+    "BluePochLogo": {
+        "recognition": "TemplateMatch",
         "template": "StartUp/BluePochLogo.png",
-        "roi": [298, 163, 620, 336]
-      }
+        "roi": [
+            298,
+            163,
+            620,
+            336
+        ],
+        "next": [
+            "BluePochLogo",
+            "Disclaimer",
+            "GameLoading",
+            "Download",
+            "StartGame",
+            "CloseAnnouncement"
+        ]
     },
-    "action": {
-      "type": "DoNothing"
-    },
-    "next": [
-      "BluePochLogo",
-      "Disclaimer",
-      "GameLoading",
-      "Download",
-      "StartGame",
-      "CloseAnnouncement"
-    ]
-  },
-  "Disclaimer": {
-    "recognition": {
-      "type": "TemplateMatch",
-      "param": {
+    "Disclaimer": {
+        "recognition": "TemplateMatch",
         "template": "StartUp/Disclaimer.png",
-        "roi": [512, 107, 238, 214]
-      }
+        "roi": [
+            512,
+            107,
+            238,
+            214
+        ],
+        "next": [
+            "Disclaimer",
+            "GameLoading",
+            "Download",
+            "StartGame",
+            "CloseAnnouncement"
+        ]
     },
-    "action": {
-      "type": "DoNothing"
-    },
-    "next": [
-      "Disclaimer",
-      "GameLoading",
-      "Download",
-      "StartGame",
-      "CloseAnnouncement"
-    ]
-  },
-  "GameLoading": {
-    "recognition": {
-      "type": "TemplateMatch",
-      "param": {
+    "GameLoading": {
+        "recognition": "TemplateMatch",
         "template": "StartUp/GameLoading.png",
-        "roi": [323, 0, 599, 563]
-      }
+        "roi": [
+            323,
+            0,
+            599,
+            563
+        ],
+        "next": [
+            "GameLoading",
+            "Download",
+            "StartGame",
+            "CloseAnnouncement"
+        ]
     },
-    "action": {
-      "type": "DoNothing"
+    "Download": {
+        "recognition": "OCR",
+        "expected": [
+            "下载",
+            "重试"
+        ],
+        "roi": [
+            712,
+            390,
+            187,
+            150
+        ],
+        "action": "Click",
+        "next": [
+            "GameLoading",
+            "Download",
+            "StartGame",
+            "CloseAnnouncement"
+        ]
     },
-    "next": [
-      "GameLoading",
-      "Download",
-      "StartGame",
-      "CloseAnnouncement"
-    ]
-  },
-  "Download": {
-    "recognition": {
-      "type": "OCR",
-      "param": {
-        "expected": ["下载", "重试"],
-        "roi": [712, 390, 187, 150]
-      }
-    },
-    "action": {
-      "type": "Click",
-      "param": {
-        "target": true
-      }
-    },
-    "next": [
-      "GameLoading",
-      "Download",
-      "StartGame",
-      "CloseAnnouncement"
-    ]
-  },
-  "CloseAnnouncement": {
-    "recognition": {
-      "type": "TemplateMatch",
-      "param": {
+    "CloseAnnouncement": {
+        "recognition": "TemplateMatch",
         "template": "StartUp/CloseAnnouncement.png",
-        "roi": [1105, 40, 143, 140]
-      }
+        "roi": [
+            1105,
+            40,
+            143,
+            140
+        ],
+        "action": "Click",
+        "next": [
+            "[JumpBack]Sub_HomeLoading",
+            "HomeFlag",
+            "StartGame",
+            "CloseAnnouncement"
+        ]
     },
-    "action": {
-      "type": "Click",
-      "param": {
-        "target": true
-      }
-    },
-    "next": [
-      {
-        "name": "Sub_HomeLoading",
-        "jump_back": true
-      },
-      "HomeFlag",
-      "StartGame",
-      "CloseAnnouncement"
-    ]
-  },
-  "StartGame": {
-    "recognition": {
-      "type": "TemplateMatch",
-      "param": {
+    "StartGame": {
+        "recognition": "TemplateMatch",
         "template": "StartUp/StartGame.png",
-        "roi": [517, 458, 242, 163]
-      }
+        "roi": [
+            517,
+            458,
+            242,
+            163
+        ],
+        "action": "Click",
+        "next": [
+            "[JumpBack]Sub_BackButton",
+            "[JumpBack]Sub_ObtainedAwards",
+            "[JumpBack]Sub_AccumulatedSignIn",
+            "[JumpBack]Sub_BirthdayReward",
+            "[JumpBack]Sub_Reward",
+            "[JumpBack]Sub_HomeLoading",
+            "[JumpBack]Sub_CloseDuringFestivalDipaRewardPage",
+            "HomeFlag",
+            "StartGame",
+            "CloseAnnouncement"
+        ]
     },
-    "action": {
-      "type": "Click",
-      "param": {
-        "target": true
-      }
-    },
-    "next": [
-      {
-        "name": "Sub_BackButton",
-        "jump_back": true
-      },
-      {
-        "name": "Sub_ObtainedAwards",
-        "jump_back": true
-      },
-      {
-        "name": "Sub_AccumulatedSignIn",
-        "jump_back": true
-      },
-      {
-        "name": "Sub_BirthdayReward",
-        "jump_back": true
-      },
-      {
-        "name": "Sub_Reward",
-        "jump_back": true
-      },
-      {
-        "name": "Sub_HomeLoading",
-        "jump_back": true
-      },
-      {
-        "name": "Sub_CloseDuringFestivalDipaRewardPage",
-        "jump_back": true
-      },
-      "HomeFlag",
-      "StartGame",
-      "CloseAnnouncement"
-    ]
-  },
-  "Sub_HomeLoading": {
-    "recognition": {
-      "type": "TemplateMatch",
-      "param": {
+    "Sub_HomeLoading": {
+        "recognition": "TemplateMatch",
         "template": "StartUp/HomeLoading.png",
-        "roi": [459, 359, 364, 152]
-      }
+        "roi": [
+            459,
+            359,
+            364,
+            152
+        ]
     },
-    "action": {
-      "type": "DoNothing"
-    }
-  },
-  "HomeFlag": {
-    "recognition": {
-      "type": "TemplateMatch",
-      "param": {
+    "HomeFlag": {
+        "recognition": "TemplateMatch",
         "template": "StartUp/HomeFlag.png",
-        "roi": [1022, 419, 194, 166]
-      }
+        "roi": [
+            1022,
+            419,
+            194,
+            166
+        ]
     },
-    "action": {
-      "type": "DoNothing"
-    }
-  },
-  "Sub_BackButton": {
-    "recognition": {
-      "type": "TemplateMatch",
-      "param": {
+    "Sub_BackButton": {
+        "recognition": "TemplateMatch",
         "template": [
-          "StartUp/BackButton.png",
-          "StartUp/BackButton_White.png"
+            "StartUp/BackButton.png",
+            "StartUp/BackButton_White.png"
         ],
-        "roi": [0, 0, 134, 138]
-      }
+        "roi": [
+            0,
+            0,
+            134,
+            138
+        ],
+        "action": "Click"
     },
-    "action": {
-      "type": "Click",
-      "param": {
-        "target": true
-      }
-    }
-  },
-  "Sub_HomeButton": {
-    "recognition": {
-      "type": "TemplateMatch",
-      "param": {
+    "Sub_HomeButton": {
+        "recognition": "TemplateMatch",
         "template": [
-          "StartUp/HomeButton.png",
-          "StartUp/HomeButton_White.png"
+            "StartUp/HomeButton.png",
+            "StartUp/HomeButton_White.png"
         ],
-        "roi": [70, 0, 144, 144]
-      }
+        "roi": [
+            70,
+            0,
+            144,
+            144
+        ],
+        "action": "Click"
     },
-    "action": {
-      "type": "Click",
-      "param": {
-        "target": true
-      }
-    }
-  },
-  "Stop": {
-    "action": {
-      "type": "DoNothing"
-    }
-  },
-  "Sub_Reward": {
-    "recognition": {
-      "type": "TemplateMatch",
-      "param": {
+    "Stop": {},
+    "Sub_Reward": {
+        "recognition": "TemplateMatch",
         "template": "StartUp/Reward.png",
-        "roi": [419, 90, 297, 148]
-      }
+        "roi": [
+            419,
+            90,
+            297,
+            148
+        ],
+        "action": "Click",
+        "target": [
+            0,
+            0,
+            526,
+            590
+        ]
     },
-    "action": {
-      "type": "Click",
-      "param": {
-        "target": [0, 0, 526, 590]
-      }
-    }
-  },
-  "Sub_AccumulatedSignIn": {
-    "recognition": {
-      "type": "TemplateMatch",
-      "param": {
+    "Sub_AccumulatedSignIn": {
+        "recognition": "TemplateMatch",
         "template": "StartUp/AccumulatedSignIn.png",
-        "roi": [562, 483, 347, 163]
-      }
+        "roi": [
+            562,
+            483,
+            347,
+            163
+        ],
+        "action": "Click"
     },
-    "action": {
-      "type": "Click",
-      "param": {
-        "target": true
-      }
-    }
-  },
-  "Sub_BirthdayReward": {
-    "recognition": {
-      "type": "TemplateMatch",
-      "param": {
+    "Sub_BirthdayReward": {
+        "recognition": "TemplateMatch",
         "template": "StartUp/BirthdayReward.png",
         "threshold": 0.8,
-        "roi": [803, 273, 121, 121]
-      }
+        "roi": [
+            803,
+            273,
+            121,
+            121
+        ],
+        "action": "Click"
     },
-    "action": {
-      "type": "Click",
-      "param": {
-        "target": true
-      }
-    }
-  },
-  "Sub_CloseDuringFestivalDipaRewardPage": {
-    "recognition": {
-      "type": "TemplateMatch",
-      "param": {
+    "Sub_CloseDuringFestivalDipaRewardPage": {
+        "recognition": "TemplateMatch",
         "template": "StartUp/CloseDuringFestivalDipaRewardPage.png",
-        "roi": [1069, 68, 138, 138]
-      }
-    },
-    "action": {
-      "type": "Click",
-      "param": {
-        "target": true
-      }
+        "roi": [
+            1069,
+            68,
+            138,
+            138
+        ],
+        "action": "Click"
     }
-  }
 }
